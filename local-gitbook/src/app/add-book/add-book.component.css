@@ -1,0 +1,23 @@
+.full-width {width: 100%}
+.button-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem,1fr));
+    gap: 1rem;
+}
+#form-mask{
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    background: rgba(255,255,255,.5);
+    z-index: 1;
+    top:0;
+}
+#form-mask #indicator{
+    position: sticky;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 20%
+}

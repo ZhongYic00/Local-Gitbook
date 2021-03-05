@@ -1,0 +1,28 @@
+
+<form id="add-book" style="margin: 1rem auto;width: 50%" #bookForm="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+	<div>
+        <mat-form-field class="full-width">
+            <mat-label>Book Name</mat-label>
+            <input matInput placeholder="Plain Text Here" type="text" pattern="[^\\\/:*?<>;|\+\[\]=,]+" name="name" [(ngModel)]="book.name" required/>
+            <!--mat-error *ngIf="nameinput.touched && nameinput.invalid && nameinput.value!=null">Book name cannot contain "{{nameinput.value!=null}}"</mat-error-->
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Repo URL</mat-label>
+            <input matInput placeholder="Ex. https://github.com/example/repo.git" type="url" name="url" [(ngModel)]="book.url" #nameinput="ngModel" required/>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Plain Text Here" type="text" name="description" [(ngModel)]="book.description"/>
+        </mat-form-field>
+	</div>
+    <div class="button-box">
+        <button mat-flat-button routerLink="/" type="reset">Cancel</button>
+        <button mat-flat-button color="primary" id="newBookRepoSubmitBtn" [disabled]="bookForm.invalid" type="submit">Add</button>
+    </div>
+    <div id="form-mask" [hidden]="serverProgress==''">
+        <div id="indicator">
+            <mat-spinner></mat-spinner>
+            <p>{{serverProgress}}</p>
+        </div>
+    </div>
+</form>

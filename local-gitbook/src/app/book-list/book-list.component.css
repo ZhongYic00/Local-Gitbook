@@ -1,0 +1,42 @@
+.book-list{
+    display: grid;
+    gap: 2vh 2vw;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    margin: 0 auto;
+    width: 85%;
+    padding: 0;
+}
+@media screen and (orientation:portrait){
+    .book-list{
+        width: 90% !important;
+    }
+}
+.mat-card{
+    display:flex !important;
+    flex-direction: column;
+    transition: box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.mat-card:hover{
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+.mat-card-header {
+    flex-shrink: 0;
+}
+.mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
+}
+.add-button-card{
+    justify-content: center;
+    align-items: center;
+    font-size:5rem;
+    cursor: pointer;
+    color: lightgrey;
+}
+.reading-progress{
+    font-size: 0.8rem;
+    margin-right: auto;
+}
+.mat-card-image{
+    height: 12rem;
+}

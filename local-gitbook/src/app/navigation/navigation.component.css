@@ -1,0 +1,26 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+main{
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+mat-sidenav-content::-webkit-scrollbar{
+  display: none;
+}

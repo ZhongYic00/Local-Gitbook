@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block header %}
+	<h1>{% block title %}Status{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	<div>
+		{% if books!=1 %}
+			<p>There are {{ books }} books on the server now</p>
+		{% else %}
+			<p>There is {{ books }} book on the server now</p>
+		{% endif %}
+	</div>
+	<div>
+		<ul>
+	</div>
+{% endblock %}

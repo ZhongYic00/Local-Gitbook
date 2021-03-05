@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block header %}
+	<h1>{% block title %}Gitbook Offline Server{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div>
+	<h2>Available Books</h2>
+		<ul>
+		{% for item in books %}
+		<li><a href="{{url_for('show_book', bookname=item['name'])}}">{{item['name']}}</a></li>
+		{% endfor %}
+		</ul>
+</div>
+<div id="add-book">
+	<div>
+	<label for="newBookName">Book Name</label>
+	<input id="newBookName" type="text" required placeholder="Plain Text Here" pattern="[^\\\/:*?<>;|\+\[\]=,]+"/>
+	<label for="newBookRepoUrl">Git Repository</label>
+	<input id="newBookRepoUrl" type="url" required placeholder="https://github.com/example/repo.git"/>
+	</div>
+	<div class="button-box">
+	<button id="cancelBtn">Cancel</button>
+	<button id="newBookRepoSubmitBtn">Add</button>
+	</div>
+</div>
+<script>
+var btn=document.getElementById('newBookRepoSubmitBtn');
+btn.addEventListener('click',()=>{
+	var bookname=document.getElementById('newBookName').value;
+	var url=document.getElementById('newBookRepoUrl').value;
+	var ajax=new Ajax();
+	ajax.post('/newBook',JSON.stringify({
+		'name':bookname,
+		'url':url
+	}));
+});
+</script>
+{% endblock %}

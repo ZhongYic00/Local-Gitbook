@@ -1,0 +1,9 @@
+*.ipynb
+/*/
+!/flaskr/
+/flaskr/static/
+/flaskr/__pycache__/
+!/flaskr/templates/
+!/local-gitbook/
+/local-gitbook/*/
+!/local-gitbook/src/

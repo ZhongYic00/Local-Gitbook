@@ -1,0 +1,28 @@
+<h1>
+    Books
+</h1>
+<div>
+<ul class="book-list">
+    <mat-card class="add-button-card"
+        mat-ripple [matRippleCentered]="true"
+        routerLink="/add-book"
+        >
+        <mat-icon [inline]="true">add</mat-icon>
+    </mat-card>
+    <mat-card *ngFor="let book of books;">
+        <mat-card-header>
+            <mat-card-title>
+                {{book.name}}
+            </mat-card-title>
+        </mat-card-header>
+        <img *ngIf="book.cover" mat-card-image [src]="book.cover" [alt]="'Cover of '+book.name" />
+        <mat-card-content>
+            <p>{{book.description}}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <p *ngIf="book.progress" class="reading-progress">Reading Progress {{book.progress | percent}}</p>
+            <button mat-button [routerLink]="['/book-reader',book.name]">Read</button>
+        </mat-card-actions>
+    </mat-card>
+</ul>
+</div>
