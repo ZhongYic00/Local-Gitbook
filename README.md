@@ -1,3 +1,6 @@
+_The Project Is Not Actively Maintained Now_
+------
+
 # Local Gitbook
 
 This is a simple client aimed at download, managing and reading gitbooks offline just on your computer.
@@ -25,6 +28,7 @@ Benefits varies from stability, availability and accessibility.
 ```shell
 # build angular app
 cd local-gitbook
+npm install
 ng build
 mv dist/local-gitbook ../flaskr/static/
 
